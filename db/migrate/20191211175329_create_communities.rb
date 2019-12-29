@@ -3,6 +3,7 @@ class CreateCommunities < ActiveRecord::Migration[6.0]
     create_table :communities do |t|
       t.string :name
       t.string :description
+      t.string :creator
 
       t.timestamps
     end

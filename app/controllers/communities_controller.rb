@@ -1,9 +1,9 @@
 class CommunitiesController < ApplicationController
-    skip_before_action :authorized, only: [:show]
+    # skip_before_action :authorized, only: [:show]
 
     def index
         communities = Community.all
-        render json: communities
+        render json: communities.to_json
     end
 
     def show
@@ -23,8 +23,19 @@ class CommunitiesController < ApplicationController
     private
 
     def community_params
-        params.require(:community).permit(:name, :description)
+        params.require(:community).permit(:id, :name, :description, :creator, :title)
     end
+
+    def community_serializer
+        {
+            :only => [:community, :id, :name, :description, :creator, :title],
+
+            # :include => {:user => {
+            #     :only => [:username]
+            # }}
+        }
+    end
+
 
 
 end

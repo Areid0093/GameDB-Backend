@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_182455) do
   create_table "communities", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.string "creator"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_182455) do
   end
 
   create_table "games", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

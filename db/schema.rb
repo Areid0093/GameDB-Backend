@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2019_12_11_182455) do
     t.string "name"
     t.string "description"
     t.string "creator"
+    t.string "title"
+    t.string "platform"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

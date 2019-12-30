@@ -11,10 +11,10 @@ class MessagesController < ApplicationController
         params.require(:message).permit(:user_id, :community_chat_id, :content)
     end
 
-    def message_serializer
-        {
-            :include => {:user => {:only => [:username]}
-        }
-    end
+    # def message_serializer
+    #     {
+    #         :include => {:user => {:only => [:username]}
+    #     }
+    # end
 
 end

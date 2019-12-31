@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :follows
   resources :favorites
   resources :games
-  resources :users, only: [:create]
+  resources :users
   post '/login', to: 'auth#create'
   # get '/logged_in', to: 'application#logged_in'
 

@@ -1,4 +1,5 @@
 class FavoritesController < ApplicationController
+    skip_before_action :authorized
 
     def index
         favorites = Favorite.all
@@ -21,7 +22,7 @@ class FavoritesController < ApplicationController
     private
 
     def favorites_params
-        params.require(:favorite).permit(:user_id, :game_id)
+        params.require(:favorite).permit!
     end
 
 

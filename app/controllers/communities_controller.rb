@@ -1,15 +1,15 @@
 class CommunitiesController < ApplicationController
-    skip_before_action :authorized, only: [:index, :show]
+    # skip_before_action :authorized, only: [:index, :show]
     # before_action :authorized, only: [:create, :update]
-    # skip_before_action :authorized
+    skip_before_action :authorized
 
     def index
         communities = Community.all
-        render json: communities.to_json
+        render json: communities
     end
 
     def show
-        render json: Community.find(params[:id]).to_json(community_serializer)
+        render json: Community.find(params[:id]).to_json
     end
 
     def create

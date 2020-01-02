@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2019_12_11_182455) do
     t.string "creator"
     t.string "title"
     t.string "platform"
+    t.string "creatorPhoto"
+    t.integer "creatorId"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -32,13 +34,6 @@ ActiveRecord::Schema.define(version: 2019_12_11_182455) do
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "game_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "follows", force: :cascade do |t|
     t.integer "user_id"
     t.integer "game_id"
     t.datetime "created_at", precision: 6, null: false
@@ -71,6 +66,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_182455) do
     t.string "password_digest"
     t.string "platform"
     t.string "gender"
+    t.string "username"
     t.date "birthday"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

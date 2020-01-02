@@ -6,6 +6,9 @@ class CreateCommunities < ActiveRecord::Migration[6.0]
       t.string :creator
       t.string :title
       t.string :platform
+      t.string :creatorPhoto
+      t.integer :creatorId
+
 
       t.timestamps
     end
